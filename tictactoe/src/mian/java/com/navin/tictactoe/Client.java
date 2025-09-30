@@ -29,8 +29,8 @@ public class Client {
             List<WinningStrategy> winningStrategies = List.of(new RowWinningStrategy(), new ColumnWinningStrategy(),
                     new DiagonalWinningStrategy());
 
-            // Game game = gameControler.startGame(dimensionsOfTheGmae, players,
-            // winningStrategies);
+            Game game = gameControler.startGame(dimensionsOfTheGmae, players,
+                    winningStrategies);
 
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());

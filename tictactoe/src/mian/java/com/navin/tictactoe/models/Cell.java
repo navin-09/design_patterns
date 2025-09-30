@@ -6,11 +6,20 @@ public class Cell {
     private Player player;
     private CellState cellState;
 
-    public Cell(int row, int col, CellState cellState, Player player) {
+    public Cell(int row, int col) {
         this.row = row;
         this.col = col;
-        this.cellState = cellState;
-        this.player = player;
+        this.cellState = CellState.EMPTY;
+        this.player = null;
+
+    }
+
+    public void display() {
+        if (player == null) {
+            System.out.print("| - |");
+        } else {
+            System.out.printf("| " + player.getSymbol().getSymbol() + " |");
+        }
 
     }
 
