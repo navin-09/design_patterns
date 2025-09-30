@@ -1,4 +1,4 @@
-package tictactoe.src.mian.java.com.navin.tictactoe.models;
+package mian.java.com.navin.tictactoe.models;
 
 import java.util.Scanner;
 

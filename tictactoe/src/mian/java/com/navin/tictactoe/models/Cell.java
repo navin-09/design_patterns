@@ -1,12 +1,17 @@
-package tictactoe.src.mian.java.com.navin.tictactoe.models;
+package mian.java.com.navin.tictactoe.models;
 
 public class Cell {
     private int row;
     private int col;
+    private Player player;
+    private CellState cellState;
 
-    public Cell(int row, int col) {
+    public Cell(int row, int col, CellState cellState, Player player) {
         this.row = row;
         this.col = col;
+        this.cellState = cellState;
+        this.player = player;
+
     }
 
     public int getRow() {
@@ -23,6 +28,22 @@ public class Cell {
 
     public void setCol(int col) {
         this.col = col;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public CellState getCellState() {
+        return cellState;
+    }
+
+    public void setCellState(CellState cellState) {
+        this.cellState = cellState;
     }
 
 }

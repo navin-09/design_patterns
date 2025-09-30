@@ -1,7 +1,7 @@
-package tictactoe.src.mian.java.com.navin.tictactoe.stratagies;
+package mian.java.com.navin.tictactoe.stratagies;
 
-import tictactoe.src.mian.java.com.navin.tictactoe.models.Board;
-import tictactoe.src.mian.java.com.navin.tictactoe.models.Move;
+import mian.java.com.navin.tictactoe.models.Board;
+import mian.java.com.navin.tictactoe.models.Move;
 
 public class ColumnWinningStrategy implements WinningStrategy {
 

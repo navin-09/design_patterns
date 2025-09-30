@@ -1,5 +1,8 @@
-package tictactoe.src.mian.java.com.navin.tictactoe.models;
+package mian.java.com.navin.tictactoe.models;
 
-public class CellState {
-    
+public enum CellState {
+    FILLED,
+    EMPTY,
+    BLOCKED
+
 }

@@ -1,9 +1,9 @@
-package tictactoe.src.mian.java.com.navin.tictactoe.models;
+package mian.java.com.navin.tictactoe.models;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import tictactoe.src.mian.java.com.navin.tictactoe.stratagies.WinningStrategy;
+import mian.java.com.navin.tictactoe.stratagies.WinningStrategy;
 
 public class Game {
     private Board board;
