@@ -30,3 +30,17 @@ this repo consists of some commonly used design patterns in industry
 | **Decoupling**     | Object construction logic is separated from representation. |
 | **Best Used When** | Constructors have >3 parameters, especially optional ones.  |
 
+
+# prototype_design_pattern
+
+| **Aspect**                 | **Description**                                                                                                                                             |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pattern Type**           | Creational                                                                                                                                                  |
+| **Intent**                 | Copy existing objects instead of creating from scratch                                                                                                      |
+| **When to Use**            | When object creation is costly (e.g., loading data, complex setup)                                                                                          |
+| **Key Methods**            | `clone()` or a copy constructor                                                                                                                             |
+| **Advantages**             | ✅ Faster object creation<br>✅ Avoids repeated initialization<br>✅ Easy to make variations                                                                   |
+| **Disadvantages**          | ❌ Requires deep copy for nested objects<br>❌ Cloning can get complex for reference-heavy classes                                                            |
+| **Common Use Cases**       | - Game engines (duplicating characters/enemies)<br>- Document editors (copying shapes)<br>- Database entities caching                                       |
+| **Implementation Options** | 1️⃣ Implement your own `clone()`<br>2️⃣ Use Java’s built-in `Cloneable` + `Object.clone()`<br>3️⃣ Use a **copy constructor** or serialization for deep copy |
+| **Example Libraries**      | Spring’s Bean cloning, Hibernate entity prototypes                                                                                                          |
