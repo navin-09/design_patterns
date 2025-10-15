@@ -58,3 +58,16 @@ this repo consists of some commonly used design patterns in industry
 | **Advantages**           | ✅ Reuse existing code<br>✅ Decouples old and new code<br>✅ Increases flexibility                                                                       |
 | **Disadvantages**        | ❌ Adds extra layer (slight overhead)<br>❌ Too many adapters can make system complex                                                                    |
 | **Real-world Examples**  | - `InputStreamReader` in Java (adapts byte stream to char stream)<br>- JDBC Drivers (adapters between Java and databases)<br>- Legacy APIs integration |
+
+
+# facade_design_pattern
+
+| **Aspect**              | **Description**                                                                                                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pattern Type**        | Structural                                                                                                                                  |
+| **Intent**              | Simplify interaction with a complex subsystem                                                                                               |
+| **Main Participants**   | Facade and Subsystems                                                                                                                       |
+| **Design Principle**    | “**Talk to friends, not strangers**” — clients should talk only to the Facade                                                               |
+| **Advantages**          | ✅ Reduces complexity<br>✅ Improves readability<br>✅ Decouples client from subsystems                                                        |
+| **Disadvantages**       | ❌ May become a “god class” if it grows too large                                                                                            |
+| **Real-world Examples** | - Spring’s `JdbcTemplate` (hides JDBC complexity)<br>- Hibernate’s `Session` API<br>- Java’s `ExecutorService` (simplifies thread handling) |
