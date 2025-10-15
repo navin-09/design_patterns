@@ -88,3 +88,27 @@ this repo consists of some commonly used design patterns in industry
 | **Common Examples**          | - Java `Integer.valueOf()` caching<br>- `String` interning (`String.intern()`)<br>- Character glyph rendering in text editors<br>- Game object sharing (e.g., trees, bullets)                                                                     |
 | **Real-world Analogy**       | Airline seat model 🎫 — one seat _template_ shared, position (row/column) supplied per booking.                                                                                                                                                   |
 | **In Java API**              | - `Integer`, `Boolean`, and `Character` caching<br>- `String.intern()`<br>- Java’s `Font` and `Color` reuse in AWT/Swing                                                                                                                          |
+
+
+# factory_design_pattern
+
+| **Aspect**                      | **Description**                                                                                                                                                                                          |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pattern Type**                | Creational Design Pattern                                                                                                                                                                                |
+| **Purpose / Intent**            | To **encapsulate object creation logic** and allow creating objects **without exposing instantiation details** (`new` keyword).                                                                          |
+| **Core Idea**                   | Delegate object creation to a **factory class or subclass**, instead of directly instantiating objects in client code.                                                                                   |
+| **Problem Solved**              | Avoids tight coupling between client and concrete classes — improves flexibility and scalability.                                                                                                        |
+| **Design Principle**            | “**Program to an interface, not to an implementation.**”                                                                                                                                                 |
+| **Main Participants**           | - **Product** (interface or abstract class)<br>- **Concrete Product** (actual implementation)<br>- **Creator / Factory** (declares factory method)<br>- **Concrete Factory** (implements factory method) |
+| **Advantages**                  | ✅ Centralized object creation<br>✅ Loose coupling<br>✅ Easy to extend (add new types)<br>✅ Improves testability and maintainability                                                                      |
+| **Disadvantages**               | ❌ Adds extra abstraction layers<br>❌ Can increase complexity for small systems                                                                                                                           |
+| **When to Use**                 | - You need to delegate creation logic.<br>- You want flexibility in choosing which subclass or type to instantiate.<br>- You want to hide complex initialization.                                        |
+| **Real-world Examples in Java** | - `Calendar.getInstance()`<br>- `DocumentBuilderFactory.newInstance()`<br>- `ConnectionFactory` in JDBC<br>- `LoggerFactory` (SLF4J)<br>- `ExecutorService.newFixedThreadPool()`                         |
+| **Key Benefit**                 | Reduces dependency on concrete classes; new product types can be added with minimal change to client code.                                                                                               |
+
+
+| **Pattern**          | **Definition**                                                                                             | **Who Decides Object Creation**             | **Example**                            | **Usage Level**         |
+| -------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------- | -------------------------------------- | ----------------------- |
+| **Simple Factory**   | A single class decides which object to create, usually via a static method.                                | The factory class itself                    | `ShapeFactory.getShape("circle")`      | Common (unofficial GoF) |
+| **Factory Method**   | Defines an interface for object creation but lets **subclasses decide** which class to instantiate.        | Subclasses (via overridden factory methods) | `DocumentBuilderFactory.newInstance()` | GoF pattern             |
+| **Abstract Factory** | Provides an interface to create **families of related objects** without specifying their concrete classes. | Concrete factories chosen by configuration  | `GUIFactory → WinFactory/MacFactory`   | GoF pattern             |
