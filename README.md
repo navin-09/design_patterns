@@ -1,10 +1,9 @@
 # design_patterns
 this repo consists of some commonly used design patterns in industry
 
-# singleton_design_pattern
-
 | **Aspect**                       | **Description**                                                                                                                                                                                         |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |                                                                                                                                         |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pattern Type**                 | *Creational Design Pattern*                                                                                                                                                                             |
 | **Intent / Purpose**             | Ensures that a class has **only one instance** and provides a **global access point** to it.                                                                                                            |
 | **Common Use Cases**             | Database connection managers, logging services, configuration managers, thread pools, caches.                                                                                                           |
 | **Key Features**                 | - Private constructor<br>- Static instance<br>- Public static `getInstance()` method                                                                                                                    |
@@ -18,7 +17,6 @@ this repo consists of some commonly used design patterns in industry
 | **When to Use**                  | When exactly **one instance** of a class is required globally.                                                                                                                                          |
 | **When *Not* to Use**            | When objects hold **mutable state** or your system relies heavily on **unit testing / dependency injection**.                                                                                           |
 | **Real-World Example**           | `Runtime.getRuntime()`, `Logger.getInstance()`, Spring Beans (default scope = Singleton)                                                                                                                |
-
 
 
 # builder_design_pattern
