@@ -89,7 +89,6 @@ this repo consists of some commonly used design patterns in industry
 | **Real-world Analogy**       | Airline seat model 🎫 — one seat _template_ shared, position (row/column) supplied per booking.                                                                                                                                                   |
 | **In Java API**              | - `Integer`, `Boolean`, and `Character` caching<br>- `String.intern()`<br>- Java’s `Font` and `Color` reuse in AWT/Swing                                                                                                                          |
 
-
 # factory_design_pattern
 
 | **Aspect**                      | **Description**                                                                                                                                                                                          |
@@ -100,15 +99,27 @@ this repo consists of some commonly used design patterns in industry
 | **Problem Solved**              | Avoids tight coupling between client and concrete classes — improves flexibility and scalability.                                                                                                        |
 | **Design Principle**            | “**Program to an interface, not to an implementation.**”                                                                                                                                                 |
 | **Main Participants**           | - **Product** (interface or abstract class)<br>- **Concrete Product** (actual implementation)<br>- **Creator / Factory** (declares factory method)<br>- **Concrete Factory** (implements factory method) |
-| **Advantages**                  | ✅ Centralized object creation<br>✅ Loose coupling<br>✅ Easy to extend (add new types)<br>✅ Improves testability and maintainability                                                                      |
-| **Disadvantages**               | ❌ Adds extra abstraction layers<br>❌ Can increase complexity for small systems                                                                                                                           |
+| **Advantages**                  | ✅ Centralized object creation<br>✅ Loose coupling<br>✅ Easy to extend (add new types)<br>✅ Improves testability and maintainability                                                                  |
+| **Disadvantages**               | ❌ Adds extra abstraction layers<br>❌ Can increase complexity for small systems                                                                                                                         |
 | **When to Use**                 | - You need to delegate creation logic.<br>- You want flexibility in choosing which subclass or type to instantiate.<br>- You want to hide complex initialization.                                        |
 | **Real-world Examples in Java** | - `Calendar.getInstance()`<br>- `DocumentBuilderFactory.newInstance()`<br>- `ConnectionFactory` in JDBC<br>- `LoggerFactory` (SLF4J)<br>- `ExecutorService.newFixedThreadPool()`                         |
 | **Key Benefit**                 | Reduces dependency on concrete classes; new product types can be added with minimal change to client code.                                                                                               |
-
 
 | **Pattern**          | **Definition**                                                                                             | **Who Decides Object Creation**             | **Example**                            | **Usage Level**         |
 | -------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------- | -------------------------------------- | ----------------------- |
 | **Simple Factory**   | A single class decides which object to create, usually via a static method.                                | The factory class itself                    | `ShapeFactory.getShape("circle")`      | Common (unofficial GoF) |
 | **Factory Method**   | Defines an interface for object creation but lets **subclasses decide** which class to instantiate.        | Subclasses (via overridden factory methods) | `DocumentBuilderFactory.newInstance()` | GoF pattern             |
 | **Abstract Factory** | Provides an interface to create **families of related objects** without specifying their concrete classes. | Concrete factories chosen by configuration  | `GUIFactory → WinFactory/MacFactory`   | GoF pattern             |
+
+# startegy_design_pattern
+
+| **Aspect**                      | **Description**                                                                                                                                                                                        |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Pattern Type**                | Behavioral                                                                                                                                                                                             |
+| **Purpose**                     | Encapsulate algorithms and make them interchangeable at runtime                                                                                                                                        |
+| **Main Components**             | Strategy Interface, Concrete Strategies, Context, Client                                                                                                                                               |
+| **Design Principle**            | “**Favor composition over inheritance.**” (use strategy objects instead of subclassing)                                                                                                                |
+| **Advantages**                  | ✅ Eliminates complex conditional logic<br>✅ Adds flexibility (plug-and-play behaviors)<br>✅ Follows Open/Closed Principle (add new strategies easily)<br>✅ Improves code testability               |
+| **Disadvantages**               | ❌ Adds extra classes<br>❌ Client must understand and choose appropriate strategy                                                                                                                     |
+| **Real-World Examples in Java** | - `Comparator` interface (sorting strategies)<br>- `Collections.sort(list, comparator)`<br>- `ThreadPoolExecutor` with RejectedExecutionHandler<br>- Spring’s `ApplicationContext` strategy interfaces |
+| **Related Patterns**            | - **State Pattern** (similar structure, different intent)<br>- **Command Pattern** (encapsulates a request instead of an algorithm)<br>- **Decorator** (adds behavior dynamically)                     |
