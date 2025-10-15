@@ -1,4 +1,4 @@
-package Structural_Design_Patterns.Adapter_Design_Pattern;
+package Structural_Design_Patterns.Adapter_Design_Pattern.externalApi;
 
 public class PayPalGateway {
     public void makePayment(String currencyCode, double amt) {

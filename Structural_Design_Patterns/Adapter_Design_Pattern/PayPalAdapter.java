@@ -1,6 +1,8 @@
 package Structural_Design_Patterns.Adapter_Design_Pattern;
 
-public class PayPalAdapter implements PaymentProcessor {
+import Structural_Design_Patterns.Adapter_Design_Pattern.externalApi.PayPalGateway;
+
+public class PayPalAdapter implements PaymentAdapter {
     private PayPalGateway payPalGateway;
 
     public PayPalAdapter(PayPalGateway payPalGateway) {
