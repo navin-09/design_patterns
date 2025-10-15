@@ -44,3 +44,17 @@ this repo consists of some commonly used design patterns in industry
 | **Common Use Cases**       | - Game engines (duplicating characters/enemies)<br>- Document editors (copying shapes)<br>- Database entities caching                                       |
 | **Implementation Options** | 1️⃣ Implement your own `clone()`<br>2️⃣ Use Java’s built-in `Cloneable` + `Object.clone()`<br>3️⃣ Use a **copy constructor** or serialization for deep copy |
 | **Example Libraries**      | Spring’s Bean cloning, Hibernate entity prototypes                                                                                                          |
+
+
+# adapter_design_pattern
+
+| **Aspect**               | **Description**                                                                                                                                        |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Pattern Type**         | Structural                                                                                                                                             |
+| **Purpose**              | Bridge between incompatible interfaces                                                                                                                 |
+| **Main Participants**    | Target, Adaptee, Adapter, Client                                                                                                                       |
+| **Implementation Style** | Class Adapter (via inheritance) or Object Adapter (via composition)                                                                                    |
+| **Best Practice**        | Prefer **Object Adapter** (composition) — more flexible                                                                                                |
+| **Advantages**           | ✅ Reuse existing code<br>✅ Decouples old and new code<br>✅ Increases flexibility                                                                       |
+| **Disadvantages**        | ❌ Adds extra layer (slight overhead)<br>❌ Too many adapters can make system complex                                                                    |
+| **Real-world Examples**  | - `InputStreamReader` in Java (adapts byte stream to char stream)<br>- JDBC Drivers (adapters between Java and databases)<br>- Legacy APIs integration |
