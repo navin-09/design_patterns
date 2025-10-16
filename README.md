@@ -123,3 +123,19 @@ this repo consists of some commonly used design patterns in industry
 | **Disadvantages**               | ❌ Adds extra classes<br>❌ Client must understand and choose appropriate strategy                                                                                                                     |
 | **Real-World Examples in Java** | - `Comparator` interface (sorting strategies)<br>- `Collections.sort(list, comparator)`<br>- `ThreadPoolExecutor` with RejectedExecutionHandler<br>- Spring’s `ApplicationContext` strategy interfaces |
 | **Related Patterns**            | - **State Pattern** (similar structure, different intent)<br>- **Command Pattern** (encapsulates a request instead of an algorithm)<br>- **Decorator** (adds behavior dynamically)                     |
+
+
+
+# observer_design_pattern
+
+| **Aspect**              | **Description**                                                                                                                                                                                                  |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Pattern Type**        | Behavioral                                                                                                                                                                                                       |
+| **Purpose**             | Establish a one-to-many relationship between objects; notify all dependents automatically when the state changes                                                                                                 |
+| **Key Components**      | Subject (Observable), Observer, ConcreteSubject, ConcreteObserver                                                                                                                                                |
+| **Design Principle**    | “**Loose coupling through abstraction**” — subjects don’t need to know who observers are                                                                                                                         |
+| **Advantages**          | ✅ Promotes decoupling<br>✅ Easy to add/remove observers<br>✅ Enables event-driven systems                                                                                                                        |
+| **Disadvantages**       | ❌ Can be hard to debug if many observers<br>❌ Unexpected update order<br>❌ May cause performance issues with many listeners                                                                                      |
+| **When to Use**         | When multiple objects must react to changes in another object                                                                                                                                                    |
+| **Real-world Examples** | - GUI Event Listeners (`ActionListener` in Swing, JavaFX)<br>- `java.util.Observer` / `Observable` (legacy)<br>- Message/Event Bus (Spring Application Events, Kafka)<br>- Reactive frameworks (RxJava, Reactor) |
+| **Related Patterns**    | - **Mediator:** coordinates interactions<br>- **Publisher–Subscriber:** distributed version of Observer<br>- **Strategy:** allows different response behaviors                                                   |
