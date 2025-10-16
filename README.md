@@ -2,6 +2,11 @@
 
 this repo consists of some commonly used design patterns in industry
 
+# reference
+ 
+https://refactoring.guru/design-patterns/factory-method
+
+
 # singleTon_design_pattern
 
 | **Concept**                      | **Description**                                                                                                                                                                                   |
