@@ -1,8 +1,5 @@
 package Behavioural_Design_patterns.Strategy_Design_Pattern.app;
-
 import Behavioural_Design_patterns.Strategy_Design_Pattern.Model.PaymentType;
-import Behavioural_Design_patterns.Strategy_Design_Pattern.factory.PaymentStrategyFactory;
-import Behavioural_Design_patterns.Strategy_Design_Pattern.strategies.PaymentStrategy;
 
 public class Client {
     public static void main(String[] args) {
