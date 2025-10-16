@@ -8,20 +8,8 @@ public class Client {
     public static void main(String[] args) {
         ShoppingCart cart = new ShoppingCart();
 
-        // Using factory to obtain strategy for CREDIT_CARD
-        PaymentStrategy creditCardStrategy = PaymentStrategyFactory.create(
-                PaymentType.CREDIT_CARD, "4111222233334444", "Alice");
-        cart.setPaymentStrategy(creditCardStrategy);
-        cart.checkout(1500.0);
-
-        // // Switch to PayPal using factory
-        // PaymentStrategy paypal = PaymentStrategyFactory.create(PaymentType.PAYPAL, "alice@example.com");
-        // cart.setPaymentStrategy(paypal);
-        // cart.checkout(2200.5);
-
-        // // Switch to UPI using factory
-        // PaymentStrategy upi = PaymentStrategyFactory.create(PaymentType.UPI, "alice@upi");
-        // cart.setPaymentStrategy(upi);
-        // cart.checkout(799.99);
+        cart.checkoutWith(PaymentType.CREDIT_CARD, 1500.0, "4111222233334444", "Alice");
+        cart.checkoutWith(PaymentType.PAYPAL, 2200.5, "alice@example.com");
+        cart.checkoutWith(PaymentType.UPI, 799.99, "alice@upi");
     }
 }
